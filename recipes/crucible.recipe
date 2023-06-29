@@ -1,0 +1,24 @@
+{
+    "package":
+    {
+        "type":                         "image",
+        "name":                         "crucible",    
+        "registry":                     "github",
+        "platforms":                    ["arm64", "amd64"]
+    },
+
+    "substrate":
+    {
+        "registry":                    "docker",
+        "name":                        "debian",
+        "tag":                         "stable-slim"
+    },
+
+    "actions":
+    [
+        "apt-get update -y",
+        "apt-get install -y --no-install-recommends build-essential python wget gnupg ca-certificates software-properties-common git libssl-dev  zlib1g-dev libxext-dev",
+        "apt-get install -y --no-install-recommends libx11-dev bison libx11-xcb-dev libxkbcommon-dev libwayland-dev libxrandr-dev libxcb-randr0-dev libvulkan-dev",
+        "apt-get install -y --no-install-recommends autotools-dev libxcb-keysyms1 libxcb-keysyms1-dev libxcb-ewmh-dev liblz4-dev libzstd-dev libfontconfig1-dev"
+    ]
+}
