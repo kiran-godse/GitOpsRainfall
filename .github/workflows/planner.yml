@@ -1,4 +1,4 @@
-name: Schema Validation
+name: Validate Recipe
 
 on:
   push:
@@ -10,16 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 14
+          always-auth: false
+          check-latest: false
 
       - name: Install dependencies
-        run: npm install ajv ajv-formats ajv-errors ajv-keywords ajv-pack ajv-bsontype ajv-i18n ajv-oai202003 ajv-papaparse ajv-parsimmon ajv-errors prettier
+        run: npm install ajv ajv-formats ajv-errors ajv-keywords ajv-pack ajv-bsontype ajv-i18n ajv-oai202003 ajv-parsimmon prettier
 
-      - name: Validate Schema
-        run: node validate-recipe.js
+      - name: Validate recipe
+        run: node src/validateRecipe.js
