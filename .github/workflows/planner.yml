@@ -21,7 +21,8 @@ jobs:
           check-latest: false
 
       - name: Install dependencies
-        run: npm install ajv ajv-formats ajv-errors ajv-keywords ajv-pack ajv-bsontype ajv-i18n ajv-parsimmon prettier
+        run: npm install ajv ajv-formats ajv-errors ajv-keywords ajv-pack ajv-bsontype ajv-i18n prettier
+
   
 
       - name: Validate recipe
