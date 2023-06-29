@@ -1,11 +1,14 @@
-name: Recipe Validation
+name: Schema Validation
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  validate-recipe:
+  validate:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -16,7 +19,7 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        run: npm install
+        run: npm install ajv ajv-formats ajv-errors ajv-keywords ajv-pack ajv-bsontype ajv-i18n ajv-oai202003 ajv-papaparse ajv-parsimmon ajv-errors prettier
 
-      - name: Validate Recipe
+      - name: Validate Schema
         run: node validate-recipe.js
