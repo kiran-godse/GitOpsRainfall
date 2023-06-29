@@ -1,19 +1,13 @@
 name: Recipe Validation
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   validate-recipe:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Install Node.js
@@ -21,15 +15,8 @@ jobs:
         with:
           node-version: 14
 
-      - name: Install Ajv
-        run: npm install ajv
+      - name: Install dependencies
+        run: npm install
 
       - name: Validate Recipe
-        run: |
-          schemaPath="./schema/recipe-schema.json"
-          recipePath="./recipes/cmake.recipe"
-
-          schema=$(cat $schemaPath)
-          recipe=$(cat $recipePath)
-
-          npx ajv validate -s "$schema" -d "$recipe"
+        run: node validate-recipe.js
