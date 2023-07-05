@@ -1,0 +1,12 @@
+{
+  "name": "gitopsrainfall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "validate-recipe.js",
+  "scripts": {
+    "validate-schema": "node validate-schema.js"
+  },
+  "devDependencies": {
+    "ajv": "^7.0.4"
+  }
+}
