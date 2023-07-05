@@ -1,13 +1,16 @@
-name: Recipe Validation
+name: Schema Validation
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  validate-recipe:
+  schema-validation:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Install Node.js
@@ -18,5 +21,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Validate Recipe
-        run: node validate-recipe.js
+      - name: Schema validation
+        run: npm run validate-schema
