@@ -12,14 +12,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Install Node.js
-        uses: actions/setup-node@v2
+      
+      - name: Validate and Read Recipe
+        uses: kiran-godse/GitOpsRainfall@main
         with:
-          node-version: 14
+          recipe-file: './recipes/cmake.json'
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Schema validation
-        run: npm run index
+     
