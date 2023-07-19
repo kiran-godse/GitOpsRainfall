@@ -13,5 +13,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Validate recipe
-        run: node src/validateRecipe.js
+      - name: Run Node.js Script
+        run: node src/index.js
