@@ -1,4 +1,5 @@
 name: Schema Validation
+
 on:
   push:
     branches:
@@ -21,4 +22,4 @@ jobs:
         run: npm install
 
       - name: Validate and Read Recipe
-        run: index.js
+        run: node index.js  # Update this line to run the 'index.js' from the root directory
