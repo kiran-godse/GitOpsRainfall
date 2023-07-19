@@ -35,7 +35,7 @@
         },
         "platforms": {
           "type": "array",
-          "uniqueItems": true, // Changed "uniqueItems": "true" to "uniqueItems": true
+          "uniqueItems": true, 
           "description": "The target platforms for the output package.",
           "items": {
             "type": "string",
