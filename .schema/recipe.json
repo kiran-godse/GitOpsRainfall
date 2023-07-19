@@ -104,7 +104,7 @@
               "minLength": 3
             }
           },
-          "required": ["kind", "value"] // Changed "required": true to "required": ["kind", "value"]
+          "required": ["kind", "value"]
         },
         "needs_auth": {
           "$ref": "#/$defs/auth_check"
