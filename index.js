@@ -1,6 +1,6 @@
 const Ajv = require('ajv');
 const ajvKeywords = require('ajv-keywords');
-const schema = require('./.schemas/recipe.json');
+const schema = require('./.schema/recipe.json');
 const recipeData = require('GitOpsRainfall/recipes/cmake.json');
 
 //Remove the $schema keyword from the schema
