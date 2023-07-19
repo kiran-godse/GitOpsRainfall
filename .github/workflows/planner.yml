@@ -12,10 +12,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
+
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+
+      - name: Install Dependencies
+        run: npm install
+
       - name: Validate and Read Recipe
         uses: kiran-godse/GitOpsRainfall@main
         with:
           recipe-file: './recipes/cmake.json'
-
-     
